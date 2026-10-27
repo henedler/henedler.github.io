@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Henrik W. Edler, radio astronomer and Bell Burnell Fellow at ASTRON. Galaxy evolution in clusters and low-frequency radio techniques with LOFAR, MeerKAT and SKA-Low.">
+<meta name="author" content="Henrik W. Edler">
+<meta property="og:title" content="Henrik W. Edler">
+<meta property="og:description" content="Radio astronomer and Bell Burnell Fellow at ASTRON.">
+<meta property="og:image" content="img/cluster-banner.jpg">
+<title>Henrik W. Edler</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap">
+<style>
+/* Layout: one calm reading column, left-aligned; images sit in the column, band labels in mono */
+:root {
+  --bg: #fbfafd;
+  --surface: #f2eff7;
+  --fg: #1d1a24;
+  --muted: #5d5669;
+  --line: #e3dfeb;
+  --accent: #6e4fa6;
+  --accent-soft: #e9e2f5;
+  --font-display: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --font-body: "Source Sans 3", "Source Sans Pro", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #121017; --surface: #1b1823; --fg: #ece8f3; --muted: #a59db4;
+    --line: #2c2737; --accent: #b9a1e6; --accent-soft: #2a2238; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #121017; --surface: #1b1823; --fg: #ece8f3; --muted: #a59db4;
+  --line: #2c2737; --accent: #b9a1e6; --accent-soft: #2a2238; color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+img { max-width: 100%; height: auto; display: block; }
+a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
+
+.page { max-width: 46rem; margin: 0 auto; padding-block: 3.5rem 3rem; display: flex; flex-direction: column; gap: 4rem; }
+
+h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.2; text-wrap: balance; margin: 0; }
+h1 { font-size: clamp(2rem, 5vw, 2.6rem); letter-spacing: -0.01em; }
+h2 { font-size: 1.55rem; }
+h3 { font-size: 1.2rem; font-weight: 600; }
+p { margin: 0; }
+.prose { display: flex; flex-direction: column; gap: 1rem; max-width: 65ch; }
+
+.label {
+  font-family: var(--font-mono); font-size: 0.75rem; font-weight: 500;
+  letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted);
+}
+
+/* Header */
+.intro { display: grid; grid-template-columns: 11rem minmax(0, 1fr); gap: 2rem; align-items: start; }
+.portrait { width: 11rem; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 6px; background: var(--surface); }
+.who { display: flex; flex-direction: column; gap: 0.6rem; min-width: 0; }
+.role { font-size: 1.15rem; color: var(--muted); }
+.role strong { color: var(--fg); font-weight: 600; }
+.links { list-style: none; margin: 0.4rem 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.35rem 1.25rem; font-size: 0.98rem; }
+.links a { font-weight: 600; text-decoration: none; }
+.links a:hover { text-decoration: underline; }
+.email-line { font-size: 0.98rem; color: var(--muted); }
+.email-line a { font-weight: 600; }
+
+/* Figures */
+figure { margin: 0; display: flex; flex-direction: column; gap: 0.5rem; }
+figure img { border-radius: 6px; background: #05030c; width: 100%; }
+figcaption { font-size: 0.85rem; color: var(--muted); line-height: 1.45; }
+
+section { display: flex; flex-direction: column; gap: 1.5rem; }
+.section-head { display: flex; flex-direction: column; gap: 0.35rem; border-top: 1px solid var(--line); padding-top: 1.25rem; }
+
+/* Research themes */
+.themes { display: flex; flex-direction: column; gap: 3rem; }
+.theme { display: grid; grid-template-columns: 15rem minmax(0, 1fr); gap: 1.75rem; align-items: start; }
+.theme .text { display: flex; flex-direction: column; gap: 0.75rem; min-width: 0; }
+.bands { display: flex; flex-wrap: wrap; gap: 0.4rem; list-style: none; margin: 0; padding: 0; }
+.bands li {
+  font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent);
+  background: var(--accent-soft); padding: 0.15rem 0.5rem; border-radius: 3px; white-space: nowrap;
+}
+.theme .refs { font-size: 0.92rem; color: var(--muted); }
+
+/* Frequency axis (log scale, 10 MHz to 4 GHz) */
+.spectrum { background: var(--surface); border-radius: 6px; padding: 1rem 1rem 0.75rem; display: flex; flex-direction: column; gap: 0.5rem; }
+.track { position: relative; height: 1.5rem; }
+.track .name { position: absolute; left: 0; top: 0; font-size: 0.8rem; color: var(--muted); }
+.bar { position: absolute; top: 1.15rem; height: 0.35rem; border-radius: 2px; background: var(--muted); opacity: 0.55; }
+.bar.focus { background: var(--accent); opacity: 1; }
+.axis { position: relative; height: 1.4rem; border-top: 1px solid var(--line); margin-top: 0.3rem; }
+.axis span { position: absolute; top: 0.25rem; transform: translateX(-50%); font-family: var(--font-mono); font-size: 0.68rem; color: var(--muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.axis span:first-child { transform: none; }
+.axis span:last-child { transform: translateX(-100%); }
+
+/* Publications */
+.pubs { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 1.1rem; }
+.pubs li { display: grid; grid-template-columns: 3.25rem minmax(0, 1fr); gap: 1rem; }
+.pubs .yr { font-family: var(--font-mono); font-size: 0.85rem; color: var(--muted); padding-top: 0.15rem; font-variant-numeric: tabular-nums; }
+.pubs .t { font-weight: 600; line-height: 1.4; }
+.pubs .m { font-size: 0.92rem; color: var(--muted); }
+.more { font-size: 0.98rem; }
+
+/* Background */
+.cv { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem 2.5rem; }
+.cv h3 { font-family: var(--font-body); font-size: 0.75rem; }
+.cv dl { margin: 0.75rem 0 0; display: flex; flex-direction: column; gap: 0.8rem; }
+.cv dl div { display: flex; flex-direction: column; }
+.cv dt { font-family: var(--font-mono); font-size: 0.75rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+.cv dd { margin: 0; line-height: 1.45; }
+.cv dd small { display: block; color: var(--muted); font-size: 0.9rem; }
+
+footer { border-top: 1px solid var(--line); padding-top: 1.25rem; font-size: 0.85rem; color: var(--muted); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.5rem 1.5rem; }
+
+@media (max-width: 40rem) {
+  .page { padding-block: 2rem 2rem; gap: 3rem; }
+  .intro { grid-template-columns: 1fr; gap: 1.25rem; }
+  .portrait { width: 8.5rem; }
+  .theme { grid-template-columns: 1fr; gap: 1rem; }
+  .theme figure { max-width: 22rem; }
+  .cv { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<main class="page">
+
+  <header class="intro">
+    <img class="portrait" src="img/henrik.jpg" alt="Portrait of Henrik Edler" width="640" height="800">
+    <div class="who">
+      <h1>Henrik W. Edler</h1>
+      <p class="role">Radio astronomer &middot; <strong>Bell Burnell Fellow</strong> at ASTRON, Netherlands Institute for Radio Astronomy</p>
+      <p class="email-line">Email:
+        <a class="js-email" data-u="edler" data-d="astron.nl" href="#contact">edler [at] astron.nl</a>
+      </p>
+      <ul class="links">
+        <li><a href="cv/Edler_CV.pdf">CV (PDF)</a></li>
+        <li><a href="https://ui.adsabs.harvard.edu/public-libraries/GoGJlquBQNmwUXFuGWfpyA">Publications (ADS)</a></li>
+        <li><a href="https://orcid.org/0000-0002-4526-4806">ORCID</a></li>
+        <li><a href="https://github.com/henedler">GitHub</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <div class="prose">
+    <p>I'm a radio astronomer and currently a Bell Burnell Fellow at ASTRON in the Netherlands. I am interested in how the galaxies we observe in our Universe evolved, and how they interact with their surroundings. Radio observations are central to understanding the processes that shape galaxies: they trace the magnetic fields and energetic particles in and around galaxies, which regulate their star formation and gas supply.</p>
+    <p>I also work on extending the observational capabilities at radio wavelengths, in particular at low frequencies. How can we better correct for the Earth's ionosphere, which corrupts low-frequency observations? How can we increase image fidelity and resolution? Part of my work focuses on the LOFAR Low Band, where I co-develop the standard calibration pipeline <a href="https://github.com/revoltek/LiLF">LiLF</a>,  and contribute to the LOFAR LBA Sky Survey <a href="https://lofar-surveys.org/lolss.html">LoLSS</a>. Looking ahead, I want to carry the lessons learned from LOFAR over to the calibration and data challenges of SKA-Low.</p>
+  </div>
+
+  <figure>
+    <img src="img/cluster-banner.jpg" alt="Galaxy cluster with orange radio emission from tailed radio galaxies overlaid on blue X-ray emission from the hot intracluster gas" width="1400" height="350">
+    <figcaption>Radio emission (orange) from cluster radio galaxies, embedded in the hot intracluster gas seen in X-rays (blue).</figcaption>
+  </figure>
+
+  <section id="research" aria-labelledby="research-h">
+    <div class="section-head">
+      <h2 id="research-h">Research</h2>
+    </div>
+    <div class="themes">
+
+      <article class="theme">
+        <figure>
+          <img src="img/a1367.jpg" alt="Optical image of the Abell 1367 cluster with dark-red radio contours showing long tails trailing behind several galaxies" width="1000" height="1003" loading="lazy">
+          <figcaption>LOFAR radio tails (red) of ram-pressure-stripped galaxies in Abell 1367, on an optical Legacy Survey image.</figcaption>
+        </figure>
+        <div class="text">
+          <h3>Ram-pressure stripping</h3>
+          <ul class="bands"><li>LOFAR HBA 144 MHz</li><li>LOFAR LBA 54 MHz</li><li>MeerKAT 1.3 GHz</li></ul>
+          <p>When galaxies fall into a cluster, the hot intracluster medium pushes against them like a headwind and strips their gas. In the radio we see the cosmic rays and magnetic fields that are swept out with it, as long tails behind the galaxies. I study this process in the Virgo cluster as part of the ViCTORIA project, and in Abell 1367, where a shock in the cluster gas has produced the longest known tails of this kind.</p>
+          <p class="refs">Edler et al. 2024, A&amp;A 683, A149 &middot; Edler et al. 2026, A&amp;A 706, A240</p>
+        </div>
+      </article>
+
+      <article class="theme">
+        <figure>
+          <img src="img/m87.jpg" alt="Radio image of M87 with a bright red core surrounded by extended blue lobes and filaments" width="1000" height="1000" loading="lazy">
+          <figcaption>M87, the giant radio galaxy at the centre of the Virgo cluster, at low radio frequencies.</figcaption>
+        </figure>
+        <div class="text">
+          <h3>Radio galaxies and the intracluster medium</h3>
+          <ul class="bands"><li>LOFAR LBA 54 MHz</li><li>LOFAR HBA 144 MHz</li><li>MeerKAT 1.3 GHz</li></ul>
+          <p>The plasma launched by active galactic nuclei keeps interacting with the cluster around it long after the jets switch off. It is bent by the motion of its host, mixed into the cluster gas, and can be re-energised by turbulence and shocks. The lowest radio frequencies trace this oldest plasma best. I study these interactions in Abell 1033, Abell 1367, the merging Virgo subcluster around M49, and in M87 itself.</p>
+          <p class="refs">Edler et al. 2022, A&amp;A 666, A3 &middot; Spasic, Edler et al. 2024, A&amp;A 690, A195</p>
+        </div>
+      </article>
+
+      <article class="theme">
+        <div class="spectrum" role="img" aria-label="Logarithmic frequency axis from 10 megahertz to 4 gigahertz showing the bands of NenuFAR, LOFAR LBA, LOFAR HBA, SKA-Low and MeerKAT; the LOFAR LBA band is highlighted.">
+          <div class="label">Observing bands</div>
+          <div class="track"><span class="name">NenuFAR</span><span class="bar" style="left:0%;width:35.7%"></span></div>
+          <div class="track"><span class="name" style="color:var(--accent);font-weight:600">LOFAR LBA</span><span class="bar focus" style="left:18.3%;width:16.4%"></span></div>
+          <div class="track"><span class="name">LOFAR HBA</span><span class="bar" style="left:40.0%;width:13.0%"></span></div>
+          <div class="track"><span class="name">SKA-Low</span><span class="bar" style="left:26.9%;width:32.5%"></span></div>
+          <div class="track"><span class="name">MeerKAT</span><span class="bar" style="left:66.7%;width:31.0%"></span></div>
+          <div class="axis">
+            <span style="left:0%">10 MHz</span><span style="left:38.4%">100 MHz</span><span style="left:76.9%">1 GHz</span><span style="left:100%">4 GHz</span>
+          </div>
+        </div>
+        <div class="text">
+          <h3>Low-frequency techniques</h3>
+          <ul class="bands"><li>LOFAR LBA 30&ndash;80 MHz</li><li>LOFAR 2.0</li><li>SKA-Low</li></ul>
+          <p>Below 100&nbsp;MHz, the Earth's ionosphere distorts the incoming radio waves, and correcting for it is the main obstacle to sharp images. I co-develop LiLF, the standard calibration pipeline for the LOFAR Low Band, contribute to the LOFAR LBA Sky Survey, and lead the development of wide-field VLBI with the LOFAR Low Band, which brings sub-arcsecond resolution to these frequencies. The same capabilities open new windows on nearby stars: we detected coherent 45&nbsp;MHz emission from the planet-hosting star GJ&nbsp;725A.</p>
+          <p class="refs">de Gasperin, Edler et al. 2023, A&amp;A 673, A165 &middot; Edler et al. 2021, A&amp;A 652, A37 &middot; <a href="https://github.com/revoltek/LiLF">LiLF on GitHub</a></p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section id="publications" aria-labelledby="pubs-h">
+    <div class="section-head">
+      <h2 id="pubs-h">First-author publications</h2>
+    </div>
+    <ol class="pubs" reversed>
+      <li><span class="yr">2026</span><div><div class="t">Coherent radio emission at 45 MHz from the solar neighborhood planet-hosting star GJ 725A</div><div class="m">Edler, Callingham, Davis, et al. &middot; submitted to A&amp;A</div></div></li>
+      <li><span class="yr">2026</span><div><div class="t"><a href="https://ui.adsabs.harvard.edu/abs/2026A&amp;A...708A.154E">Multiwavelength insights into the pulsar wind nebula candidate near 1LHAASO J0343+5254u: An obscured merging galaxy cluster?</a></div><div class="m">Edler, Arias, Botteon, Bassa &middot; A&amp;A 708, A154</div></div></li>
+      <li><span class="yr">2026</span><div><div class="t"><a href="https://ui.adsabs.harvard.edu/abs/2026A&amp;A...706A.240E">The longest known tails of ram-pressure-stripped star-forming galaxies are caused by an intracluster medium shock in Abell 1367</a></div><div class="m">Edler, Hoeft, Bhagat, et al. &middot; A&amp;A 706, A240</div></div></li>
+      <li><span class="yr">2024</span><div><div class="t"><a href="https://ui.adsabs.harvard.edu/abs/2024A&amp;A...683A.149E">ViCTORIA project: The LOFAR view of environmental effects in Virgo cluster star-forming galaxies</a></div><div class="m">Edler, Roberts, Boselli, et al. &middot; A&amp;A 683, A149</div></div></li>
+      <li><span class="yr">2023</span><div><div class="t"><a href="https://ui.adsabs.harvard.edu/abs/2023A&amp;A...676A..24E">ViCTORIA project: The LOFAR HBA Virgo Cluster Survey</a></div><div class="m">Edler, de Gasperin, Shimwell, et al. &middot; A&amp;A 676, A24</div></div></li>
+      <li><span class="yr">2022</span><div><div class="t"><a href="https://ui.adsabs.harvard.edu/abs/2022A&amp;A...666A...3E">Abell 1033: Radio halo and gently reenergized tail at 54 MHz</a></div><div class="m">Edler, de Gasperin, Brunetti, et al. &middot; A&amp;A 666, A3</div></div></li>
+      <li><span class="yr">2021</span><div><div class="t"><a href="https://ui.adsabs.harvard.edu/abs/2021A&amp;A...652A..37E">Investigating ionospheric calibration for LOFAR 2.0 with simulated observations</a></div><div class="m">Edler, de Gasperin, Rafferty &middot; A&amp;A 652, A37</div></div></li>
+    </ol>
+    <p class="more">All publications, including co-authored work, are in my <a href="https://ui.adsabs.harvard.edu/public-libraries/GoGJlquBQNmwUXFuGWfpyA">NASA/ADS library</a>.</p>
+  </section>
+
+  <section id="background" aria-labelledby="bg-h">
+    <div class="section-head">
+      <h2 id="bg-h">Background</h2>
+    </div>
+    <div class="cv">
+      <div>
+        <h3 class="label">Positions &amp; education</h3>
+        <dl>
+          <div><dt>since 2024</dt><dd>Bell Burnell Fellow<small>ASTRON, Dwingeloo</small></dd></div>
+          <div><dt>2024</dt><dd>Postdoctoral researcher<small>Hamburg Observatory, University of Hamburg</small></dd></div>
+          <div><dt>2020&ndash;2024</dt><dd>PhD in Physics, summa cum laude<small>University of Hamburg</small></dd></div>
+          <div><dt>2018&ndash;2020</dt><dd>MSc in Physics, with distinction<small>University of Hamburg</small></dd></div>
+        </dl>
+      </div>
+      <div>
+        <h3 class="label">Highlights</h3>
+        <dl>
+          <div><dt>2024</dt><dd>Bell Burnell Fellowship<small>Independent fellowship, ASTRON</small></dd></div>
+          <div><dt>2024</dt><dd>Stargazer Award for the PhD thesis</dd></div>
+          <div><dt>2025</dt><dd>DFG Research Grant, Co-I<small>Galaxy evolution in clusters</small></dd></div>
+          <div><dt>2027</dt><dd>Main organiser, Lorentz Center workshop<small>Sub-arcsecond astronomy below 100 MHz, Leiden</small></dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <span>Henrik W. Edler &middot; ASTRON, Dwingeloo, The Netherlands</span>
+    <span>Updated October 2026</span>
+  </footer>
+
+</main>
+
+<script>
+  // Build the email address at load time so it is not in the HTML source as plain text.
+  document.querySelectorAll(".js-email").forEach(function (a) {
+    var addr = a.dataset.u + "@" + a.dataset.d;
+    a.textContent = addr;
+    a.href = "mailto:" + addr;
+  });
+</script>
+</body>
+</html>
