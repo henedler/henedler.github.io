@@ -159,65 +159,57 @@ footer { border-top: 1px solid var(--line); padding-top: 1.25rem; font-size: 0.8
     </div>
   </header>
 
-  <div class="prose">
-    <p>I'm a radio astronomer and currently a Bell Burnell Fellow at ASTRON in the Netherlands. I am interested in how the galaxies we observe in our Universe evolved, and how they interact with their surroundings. Radio observations are central to understanding the processes that shape galaxies: they trace the magnetic fields and energetic particles in and around galaxies, which regulate their star formation and gas supply.</p>
-    <p>I also work on extending the observational capabilities at radio wavelengths, in particular at low frequencies. How can we better correct for the Earth's ionosphere, which corrupts low-frequency observations? How can we increase image fidelity and resolution? Part of my work focuses on the LOFAR Low Band, where I co-develop the standard calibration pipeline <a href="https://github.com/revoltek/LiLF">LiLF</a>,  and contribute to the LOFAR LBA Sky Survey <a href="https://lofar-surveys.org/lolss.html">LoLSS</a>. Looking ahead, I want to carry the lessons learned from LOFAR over to the calibration and data challenges of SKA-Low.</p>
-  </div>
 
-  <figure>
-    <img src="img/cluster-banner.jpg" alt="Galaxy cluster with orange radio emission from tailed radio galaxies overlaid on blue X-ray emission from the hot intracluster gas" width="1400" height="350">
-    <figcaption>Radio emission (orange) from cluster radio galaxies, embedded in the hot intracluster gas seen in X-rays (blue).</figcaption>
-  </figure>
 
   <section id="research" aria-labelledby="research-h">
     <div class="section-head">
       <h2 id="research-h">Research</h2>
     </div>
+    <p> I'm a radio astronomer and currently a Bell Burnell Fellow at ASTRON in the Netherlands. My main research interests are the following:</p>
     <div class="themes">
 
       <article class="theme">
         <figure>
-          <img src="img/a1367.jpg" alt="Optical image of the Abell 1367 cluster with dark-red radio contours showing long tails trailing behind several galaxies" width="1000" height="1003" loading="lazy">
-          <figcaption>LOFAR radio tails (red) of ram-pressure-stripped galaxies in Abell 1367, on an optical Legacy Survey image.</figcaption>
+          <img src="img/a1367_rps.png" alt="Optical image of the Abell 1367 cluster with dark-red radio contours showing long tails trailing behind several galaxies" width="1000" height="1003" loading="lazy">
+          <figcaption>LOFAR radio tails (red) of ram-pressure-stripped star-forming galaxies in Abell 1367, overlaid on the optical Legacy Survey image.</figcaption>
         </figure>
         <div class="text">
-          <h3>Ram-pressure stripping</h3>
-          <ul class="bands"><li>LOFAR HBA 144 MHz</li><li>LOFAR LBA 54 MHz</li><li>MeerKAT 1.3 GHz</li></ul>
-          <p>When galaxies fall into a cluster, the hot intracluster medium pushes against them like a headwind and strips their gas. In the radio we see the cosmic rays and magnetic fields that are swept out with it, as long tails behind the galaxies. I study this process in the Virgo cluster as part of the ViCTORIA project, and in Abell 1367, where a shock in the cluster gas has produced the longest known tails of this kind.</p>
-          <p class="refs">Edler et al. 2024, A&amp;A 683, A149 &middot; Edler et al. 2026, A&amp;A 706, A240</p>
+          <h3>Galaxy evolution</h3>
+           <p> I am interested in how the galaxies we observe in our Universe evolved, and how they interact with their surroundings. Radio observations are central to understanding the processes that shape galaxies: they trace the magnetic fields and energetic particles in and around galaxies, which regulate their star formation and gas supply. In particular, I am interested how the star-formation process is connected to the radio emission of galaxies, and how  ram pressure stripping transforms cluster galaxies. Low frequency radio observations are an excellent probe of ongoing ram pressure stripping, since they allow us to detect the radio tails of stripped non-thermal plasma (see image). </p>
         </div>
       </article>
 
       <article class="theme">
         <figure>
-          <img src="img/m87.jpg" alt="Radio image of M87 with a bright red core surrounded by extended blue lobes and filaments" width="1000" height="1000" loading="lazy">
+          <img src="img/aa46458-23-fig1.png" alt="Radio image of M87 with a bright red core surrounded by extended blue lobes and filaments" width="1000" height="1000" loading="lazy">
           <figcaption>M87, the giant radio galaxy at the centre of the Virgo cluster, at low radio frequencies.</figcaption>
         </figure>
         <div class="text">
-          <h3>Radio galaxies and the intracluster medium</h3>
-          <ul class="bands"><li>LOFAR LBA 54 MHz</li><li>LOFAR HBA 144 MHz</li><li>MeerKAT 1.3 GHz</li></ul>
-          <p>The plasma launched by active galactic nuclei keeps interacting with the cluster around it long after the jets switch off. It is bent by the motion of its host, mixed into the cluster gas, and can be re-energised by turbulence and shocks. The lowest radio frequencies trace this oldest plasma best. I study these interactions in Abell 1033, Abell 1367, the merging Virgo subcluster around M49, and in M87 itself.</p>
-          <p class="refs">Edler et al. 2022, A&amp;A 666, A3 &middot; Spasic, Edler et al. 2024, A&amp;A 690, A195</p>
+          <h3>Radio surveys</h3>
+        <p> Low-frequency radio surveys are the best way to discover old cosmic-ray plasma, which becomes invisible at higher frequencies. I am involved in carrying out the <a href="https://lofar-surveys.org/lolss.html">LOFAR LBA Sky Survey (LoLSS)</a>, the most sensitive survey of the sky below 100 MHz, and I lead the <a href="https://lofar-surveys.org/virgo_survey.html">ViCTORIA LOFAR HBA survey</a>, the most sensitive radio survey of the Virgo Cluster to date.</p>
         </div>
       </article>
 
       <article class="theme">
-        <div class="spectrum" role="img" aria-label="Logarithmic frequency axis from 10 megahertz to 4 gigahertz showing the bands of NenuFAR, LOFAR LBA, LOFAR HBA, SKA-Low and MeerKAT; the LOFAR LBA band is highlighted.">
-          <div class="label">Observing bands</div>
-          <div class="track"><span class="name">NenuFAR</span><span class="bar" style="left:0%;width:35.7%"></span></div>
-          <div class="track"><span class="name" style="color:var(--accent);font-weight:600">LOFAR LBA</span><span class="bar focus" style="left:18.3%;width:16.4%"></span></div>
-          <div class="track"><span class="name">LOFAR HBA</span><span class="bar" style="left:40.0%;width:13.0%"></span></div>
-          <div class="track"><span class="name">SKA-Low</span><span class="bar" style="left:26.9%;width:32.5%"></span></div>
-          <div class="track"><span class="name">MeerKAT</span><span class="bar" style="left:66.7%;width:31.0%"></span></div>
-          <div class="axis">
-            <span style="left:0%">10 MHz</span><span style="left:38.4%">100 MHz</span><span style="left:76.9%">1 GHz</span><span style="left:100%">4 GHz</span>
-          </div>
-        </div>
+        <figure>
+          <img src="img/a2255_lba_vlbi.png" alt="VLBI observations with the LOFAR Low-band antenna." width="1200" height="1200" loading="lazy">
+          <figcaption>Experiments on VLBI at 50 MHz using the LOFAR LBA, the zoom-ins show the comparison between the standard imaging (15'' resolution) and the VLBI mode (<1'' resolution).</figcaption>
+        </figure>
         <div class="text">
-          <h3>Low-frequency techniques</h3>
-          <ul class="bands"><li>LOFAR LBA 30&ndash;80 MHz</li><li>LOFAR 2.0</li><li>SKA-Low</li></ul>
-          <p>Below 100&nbsp;MHz, the Earth's ionosphere distorts the incoming radio waves, and correcting for it is the main obstacle to sharp images. I co-develop LiLF, the standard calibration pipeline for the LOFAR Low Band, contribute to the LOFAR LBA Sky Survey, and lead the development of wide-field VLBI with the LOFAR Low Band, which brings sub-arcsecond resolution to these frequencies. The same capabilities open new windows on nearby stars: we detected coherent 45&nbsp;MHz emission from the planet-hosting star GJ&nbsp;725A.</p>
-          <p class="refs">de Gasperin, Edler et al. 2023, A&amp;A 673, A165 &middot; Edler et al. 2021, A&amp;A 652, A37 &middot; <a href="https://github.com/revoltek/LiLF">LiLF on GitHub</a></p>
+          <h3>Radio interferometry techniques</h3>
+        <p>I also work on extending the observational capabilities at radio wavelengths, in particular at low frequencies. How can we better correct for the Earth's ionosphere, which corrupts low-frequency observations? How can we increase image fidelity and resolution? A lot of my work focuses on LOFAR 2.0, where I co-develop the standard calibration pipeline for the low band (<a href="https://github.com/revoltek/(LiLF)">LiLF</a>), and where I am developing the usage of the very long baseline interferometry (VLBI) mode (see image). Looking ahead, I want to carry the lessons learned from LOFAR over to the calibration and data challenges of SKA-Low.</p>
+        </div>
+      </article>
+
+
+      <article class="theme">
+        <figure>
+          <img src="img/GJ725A.png" alt="LOFAR LBA image at 46 MHz of the transient signal from GJ725A - the circles show the location of the binary components at the epoch of detection, and the ellipse the 2-sigma localization of the radio source." width="1200" height="1200" loading="lazy">
+          <figcaption>LOFAR LBA image at 46 MHz of the transient signal from GJ725A - the circles show the location of the binary components at the epoch of detection, and the ellipse the 2-sigma localization of the radio source.</figcaption>
+        </figure>
+        <div class="text">
+          <h3>Radio signatures of exoplanetary systems</h3>
+        <p>Similar to the planets in our Solar System, also exoplanets can be sources of low-frequency radio emission - detection of these signals are of great interest as they provide an independent radio-route for exoplanet detection, and allow us to infer the magnetic fields of exoplanets. I use circularly polarization information from low-frequency radio surveys to hunt these exotic radio sources. One promising cadidate for a radio-signal due to star-planet interaction is GJ725A, for which I detected sub-50 MHz, highly circularly polarized transient emission (Edler et al., in rev.). I am currently following up this system with monitoring campaigns. </p>
         </div>
       </article>
 
@@ -266,10 +258,16 @@ footer { border-top: 1px solid var(--line); padding-top: 1.25rem; font-size: 0.8
     </div>
   </section>
 
+  <figure>
+    <img src="img/cluster-banner.jpg" alt="Galaxy cluster with orange radio emission from tailed radio galaxies overlaid on blue X-ray emission from the hot intracluster gas" width="1400" height="350">
+    <figcaption>The "gently re-energized tail" (GReET) and other radio sources (orange) in the Abell 1033 galaxy cluster, embedded in the hot intracluster medium seen in X-rays (blue).</figcaption>
+  </figure>
   <footer id="contact">
     <span>Henrik W. Edler &middot; ASTRON, Dwingeloo, The Netherlands</span>
     <span>Updated October 2026</span>
   </footer>
+
+
 
 </main>
 
